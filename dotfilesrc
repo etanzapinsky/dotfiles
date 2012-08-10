@@ -1,0 +1,7 @@
+[dotfiles]
+repository = ~/dotfiles
+ignore = [
+    '.git',
+    '.gitignore',
+    '.DS_Store',
+    '.bash_history']
