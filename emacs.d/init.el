@@ -1,8 +1,8 @@
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
@@ -10,11 +10,11 @@
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify)))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(linum ((t (:inherit (shadow default) :background "grey10")))))
 
 
 (put 'upcase-region 'disabled nil)
@@ -87,7 +87,7 @@
 ;; Adds closing quote, paren, etc. when first is added
 (load "~/.emacs.d/conf/autopair.el")
 (require 'autopair)
-(electric-pair-mode 1)
+(autopair-global-mode 1)
 
 ;; Line numbers, and turning them off in non-code buffers
 (load "~/.emacs.d/conf/linum/linum.el")
@@ -97,9 +97,10 @@
 ;; Deletes highlighted content
 (delete-selection-mode 1)
 
-;; Potential to highlight a collumn
+;; Potential to highlight a column
 (require 'fill-column-indicator)
 (setq-default fill-column 80)
+(add-hook 'c-mode-hook 'fci-mode)
 
 ;; Color Theme
 (load "~/.emacs.d/conf/color-theme.el")
@@ -183,20 +184,21 @@
 ;; Column number mode
 (column-number-mode 1)
 
-;; Lisp
-(load (expand-file-name "~/Development/lisp/quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "/usr/local/bin/sbcl") ; Replace "sbcl" with the path to your implementation
-;; Basic slime
-(add-to-list 'load-path "~/Development/lisp/slime/")  ; your SLIME directory
-(require 'slime)
-(slime-setup)
-;; Even more fun slime things
-(require 'slime-autoloads)
-(slime-setup '(slime-scratch slime-editing-commands))
-;; (slime-setup '(slime-repl)) ; repl only
-(slime-setup '(slime-fancy)) ; almost everything
+;; ;; Lisp
+;; (load (expand-file-name "~/Development/lisp/quicklisp/slime-helper.el"))
+;; (setq inferior-lisp-program "/usr/local/bin/sbcl") ; Replace "sbcl" with the path to your implementation
+;; ;; Basic slime
+;; (add-to-list 'load-path "~/Development/lisp/slime/")  ; your SLIME directory
+;; (require 'slime)
+;; (slime-setup)
+;; ;; Even more fun slime things
+;; (require 'slime-autoloads)
+;; (slime-setup '(slime-scratch slime-editing-commands))
+;; ;; (slime-setup '(slime-repl)) ; repl only
+;; (slime-setup '(slime-fancy)) ; almost everything
 
 ;; ;; Scheme
 ;; (load-library "xscheme")
 
+;; Turns line numbers on
 (global-linum-mode 1)
