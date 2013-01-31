@@ -6,6 +6,8 @@ alias ll='ls -laF'
 alias la='ls -lF'
 # scheme edwin alias
 alias edwin='scheme -edwin -edit'
+# fetch = interuptable scp and then picks up where scp left off
+alias fetch="rsync --archive --compress --partial --progress --append"
 
 # Colorful grep
 export GREP_OPTIONS='--color=auto'
