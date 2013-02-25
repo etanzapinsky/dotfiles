@@ -19,10 +19,16 @@
 
 (put 'upcase-region 'disabled nil)
 
+;; Ctrl-h means delete, not help
 (global-set-key [?\C-h] 'delete-backward-char)
 
+;; Set tab size in C
 (setq c-basic-offset '8)
+
+;; Shortcut to compile code
 (global-set-key [?\C-c ?\c] 'compile)
+
+;; Shortcut to comment line or region of code
 (global-set-key [?\C-\M-c] 'comment-or-uncomment-region-or-line)
 
 ;; C kernel coding styles
@@ -78,7 +84,7 @@
 ; (require 'nxhtml-mumamo)
 ;; Teaching nxhtml about html5
 ; (add-to-list 'load-path "~/.emacs.d/conf/html5-el/")
-;(eval-after-load "rng-loc"
+; (eval-after-load "rng-loc"
 ;  '(add-to-list 'rng-schema-locating-files "~/.emacs.d/conf/html5-el/schemas.xml"))
 ; (require 'whattf-dt)
 
@@ -99,7 +105,7 @@
 
 ;; Potential to highlight a column
 (require 'fill-column-indicator)
-(setq-default fill-column 80)
+(setq-default fci-rule-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
 
 ;; Color Theme
@@ -111,6 +117,11 @@
 (require 'color-theme-sunburst)
 (color-theme-initialize)
 (color-theme-sunburst)
+
+;; Add markdown sytax highlighting
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; Unique buffer names
 (require 'uniquify)
