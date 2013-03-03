@@ -20,7 +20,7 @@
 (put 'upcase-region 'disabled nil)
 
 ;; Ctrl-h means delete, not help
-(global-set-key [?\C-h] 'delete-backward-char)
+;(global-set-key [?\C-h] 'delete-backward-char)
 
 ;; Set tab size in C
 (setq c-basic-offset '8)
