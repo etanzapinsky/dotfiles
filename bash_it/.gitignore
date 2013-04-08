@@ -1,6 +1,8 @@
 */enabled/*
 .DS_Store
+custom/*
 !custom/example.bash
+!custom/mythings.bash
 .rvmrc
 aliases/custom.aliases.bash
 lib/custom.bash
