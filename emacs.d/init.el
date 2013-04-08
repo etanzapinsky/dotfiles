@@ -61,6 +61,23 @@
                 (setq indent-tabs-mode t)
                 (c-set-style "linux-tabs-only")))))
 
+(add-hook 'after-make-frame-functions
+          (lambda (&optional frame)
+            (select-frame frame)
+            (unless (display-graphic-p)
+              ;; enable mouse reporting for terminal emulators
+              (xterm-mouse-mode t)
+              (global-set-key [mouse-4] '(lambda ()
+                                           (interactive)
+                                           (scroll-down 1)))
+              (global-set-key [mouse-5] '(lambda ()
+                                           (interactive)
+                                           (scroll-up 1))))))
+
+(when (boundp 'input-decode-map)
+  (define-key input-decode-map "^[[1;5C" [(control right)])
+  (define-key input-decode-map "^[[1;5D" [(control left)]))
+
 (add-to-list 'load-path "~/.emacs.d/conf/")
 
 ;; Soft tabs
@@ -80,13 +97,14 @@
 (global-auto-revert-mode 1)
 
 ;; nxhtml --> colors javascript, css, php properly inside a html page
-; (load "~/.emacs.d/conf/nxhtml/autostart.el")
-; (require 'nxhtml-mumamo)
+(load "~/.emacs.d/conf/nxhtml/autostart.el")
+(require 'nxhtml-mumamo)
+(setq mumamo-background-colors nil)
 ;; Teaching nxhtml about html5
-; (add-to-list 'load-path "~/.emacs.d/conf/html5-el/")
-; (eval-after-load "rng-loc"
-;  '(add-to-list 'rng-schema-locating-files "~/.emacs.d/conf/html5-el/schemas.xml"))
-; (require 'whattf-dt)
+;; (add-to-list 'load-path "~/.emacs.d/conf/html5-el/")
+;; (eval-after-load "rng-loc"
+;;  '(add-to-list 'rng-schema-locating-files "~/.emacs.d/conf/html5-el/schemas.xml"))
+;; (require 'whattf-dt)
 
 ;; Matching parens
 (show-paren-mode 1)
@@ -107,6 +125,7 @@
 (require 'fill-column-indicator)
 (setq-default fci-rule-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
+(add-hook 'python-mode-hook 'fci-mode)
 
 ;; Color Theme
 (load "~/.emacs.d/conf/color-theme.el")
@@ -194,6 +213,9 @@
 
 ;; Column number mode
 (column-number-mode 1)
+
+;; Django mode
+(require 'python-django)
 
 ;; ;; Lisp
 ;; (load (expand-file-name "~/Development/lisp/quicklisp/slime-helper.el"))

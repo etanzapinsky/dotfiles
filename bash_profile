@@ -1,55 +1,47 @@
-# ls defualt now is colored output
-alias ls='ls -G'
-# Prints all files (including hidden ones) with permissions
-alias ll='ls -laF' 
-# Prints all files with permissions
-alias la='ls -lF'
-# scheme edwin alias
-alias edwin='scheme -edwin -edit'
-# fetch = interuptable scp and then picks up where scp left off
-alias fetch="rsync --archive --compress --partial --progress --append"
+#!/usr/bin/env bash
 
-# Colorful grep
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
+# Load RVM, if you are using it
+#[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+# Add rvm gems and nginx to the path
+#export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
 # Adds bin where python installs packages 
-# (I think lion caused this to happen)
-PATH=/usr/local/share/python:$PATH
-# adds bin where brew installs programs
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH
+# and adds bin where brew installs programs
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
 
-# Prompt
-function parse_git_dirty {
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
-}
-export PS1="\[\033[0;31m\]\u\[\033[00m\]:\[\033[0;36m\]\w\[\033[00m\]\[\033[0;33m\]\$(parse_git_branch)\[\033[00m\]$ "
-#export PS1='\u@\h \[\033[1;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+# Path to the bash it configuration
+export BASH_IT=$HOME/.bash_it
 
-# virtualenvwrapper
-# source /usr/local/bin/virtualenvwrapper.sh
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='hawaii50'
 
-# Adds git branch to prompt
-# function parse_git_branch {
-#   ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-#   echo "("${ref#refs/heads/}")"
-# }
-# RED="\[\033[0;31m\]"
-# YELLOW="\[\033[0;33m\]"
-# GREEN="\[\033[0;32m\]"
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
 
-# PS1="\$(parse_git_branch)\$ "
+# Set my editor and git editor
+export EDITOR="/usr/bin/mate -w"
+export GIT_EDITOR='/usr/bin/mate -w'
 
-# Django bash completion
-. /usr/local/lib/python2.7/site-packages/django/extras/django_bash_completion
+# Set the path nginx
+export NGINX_PATH='/opt/nginx'
 
-# Links me to the shared Yipit bash profile
-export YIPIT_PATH=~/Development/yipit
-source ${YIPIT_PATH}/conf/yipit_bash_profile
+# Don't check mail when opening terminal.
+unset MAILCHECK
 
-# Allows me to access my virtualenvwrapper functions
-source /usr/local/share/python/virtualenvwrapper.sh
+
+# Change this to your console based IRC client of choice.
+
+export IRC_CLIENT='irssi'
+
+# Set this to the command you use for todo.txt-cli
+
+export TODO="t"
+
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/xvzf/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
