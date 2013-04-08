@@ -1,9 +1,9 @@
 # ls defualt now is colored output
 alias ls='ls -G'
 # Prints all files (including hidden ones) with permissions
-alias ll='ls -laF' 
+alias la='ls -laF' 
 # Prints all files with permissions
-alias la='ls -lF'
+alias ll='ls -lF'
 # scheme edwin alias
 alias edwin='scheme -edwin -edit'
 # fetch = interuptable scp and then picks up where scp left off
