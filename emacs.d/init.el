@@ -1,8 +1,8 @@
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
@@ -10,10 +10,11 @@
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify)))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background "nil"))))
  '(linum ((t (:inherit (shadow default) :background "grey10")))))
 
 
@@ -126,6 +127,8 @@
 (setq-default fci-rule-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
 (add-hook 'python-mode-hook 'fci-mode)
+(eval-after-load 'python
+  '(define-key python-mode-map [?\M-p] 'add-py-debug))
 
 ;; Color Theme
 (load "~/.emacs.d/conf/color-theme.el")
@@ -136,6 +139,8 @@
 (require 'color-theme-sunburst)
 (color-theme-initialize)
 (color-theme-sunburst)
+;; (load-file "~/.emacs.d/conf/themes/monokai-theme.el")
+;; (load-theme 'monokai t)
 
 ;; Add markdown sytax highlighting
 (autoload 'markdown-mode "markdown-mode"
@@ -216,6 +221,12 @@
 
 ;; Django mode
 (require 'python-django)
+
+;; import pdb things
+(defun add-py-debug ()  
+      "add debug code and move line down"  
+    (interactive)  
+    (insert "import bpdb; bpdb.set_trace()"))  
 
 ;; ;; Lisp
 ;; (load (expand-file-name "~/Development/lisp/quicklisp/slime-helper.el"))

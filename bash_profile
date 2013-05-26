@@ -21,8 +21,8 @@ export BASH_IT_THEME='hawaii50'
 export GIT_HOSTING='git@git.domain.com'
 
 # Set my editor and git editor
-export EDITOR="/usr/bin/mate -w"
-export GIT_EDITOR='/usr/bin/mate -w'
+export EDITOR='ec'
+export GIT_EDITOR='ec'
 
 # Set the path nginx
 export NGINX_PATH='/opt/nginx'
