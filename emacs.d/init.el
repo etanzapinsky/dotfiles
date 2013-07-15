@@ -14,9 +14,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background "nil"))))
  '(linum ((t (:inherit (shadow default) :background "grey10")))))
 
+;; Marmalade for emacs package installs
+(require 'package)
+(add-to-list 'package-archives 
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;; Load auto-complete on startup
+(require 'auto-complete-config)
+(ac-config-default)
 
 (put 'upcase-region 'disabled nil)
 
@@ -100,7 +109,7 @@
 ;; nxhtml --> colors javascript, css, php properly inside a html page
 (load "~/.emacs.d/conf/nxhtml/autostart.el")
 (require 'nxhtml-mumamo)
-(setq mumamo-background-colors nil)
+;(setq mumamo-background-colors nil)
 ;; Teaching nxhtml about html5
 ;; (add-to-list 'load-path "~/.emacs.d/conf/html5-el/")
 ;; (eval-after-load "rng-loc"
@@ -127,8 +136,18 @@
 (setq-default fci-rule-column 80)
 (add-hook 'c-mode-hook 'fci-mode)
 (add-hook 'python-mode-hook 'fci-mode)
+
+;; Inserting 'import bpdb; bppdb.set_trace()' on M-p
 (eval-after-load 'python
   '(define-key python-mode-map [?\M-p] 'add-py-debug))
+
+;; ;; Jedi mode for python
+(setq jedi:setup-keys t)
+(setq jedi:key-goto-definition (kbd "C-c ."))
+(setq jedi:key-complete (kbd "<backtab>"))
+(setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
 
 ;; Color Theme
 (load "~/.emacs.d/conf/color-theme.el")
@@ -138,14 +157,23 @@
 (load-file "~/.emacs.d/conf/themes/color-theme-sunburst.el")
 (require 'color-theme-sunburst)
 (color-theme-initialize)
-(color-theme-sunburst)
+;; (color-theme-sunburst)
+(color-theme-cobalt)
 ;; (load-file "~/.emacs.d/conf/themes/monokai-theme.el")
 ;; (load-theme 'monokai t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/conf/themes/emacs-color-theme-solarized/")
+;(load-theme 'solarized-dark t)
 
 ;; Add markdown sytax highlighting
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; Highlight wscript files with proper python syntax highlighting
+(add-to-list 'auto-mode-alist '("wscript\\'" . python-mode))
+
+;; gyp files are highlighted with json-mode
+(add-to-list 'auto-mode-alist '("\\.gyp\\'" . json-mode))
 
 ;; Unique buffer names
 (require 'uniquify)
@@ -227,6 +255,14 @@
       "add debug code and move line down"  
     (interactive)  
     (insert "import bpdb; bpdb.set_trace()"))  
+
+;; cmake mode
+(setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
+(require 'cmake-mode)
+(setq auto-mode-alist
+      (append '(("CMakeLists\\.txt\\'" . cmake-mode)
+                ("\\.cmake\\'" . cmake-mode))
+              auto-mode-alist))
 
 ;; ;; Lisp
 ;; (load (expand-file-name "~/Development/lisp/quicklisp/slime-helper.el"))

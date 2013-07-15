@@ -189,7 +189,7 @@ yellow="$(color reset yellow)"
 blue="$(color reset blue)"
 purple="$(color reset magenta)"
 cyan="$(color reset cyan)"
-white="$(color reset white bold)"
+white="$(color reset white)"
 orange="$(color reset red fg bright)"
 
 bold_black="$(color black bold)"
