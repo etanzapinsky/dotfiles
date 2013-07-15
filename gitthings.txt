@@ -1,0 +1,26 @@
+For gitconfig
+=============
+[alias]
+    br = branch
+    ci = commit
+    cl = clone
+    co = checkout
+    cp = cherry-pick
+    st = status -b
+    sts = status -sb
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit
+    find = "!git ls-files | grep -i"
+    pr = pull --rebase
+    pl = pull
+    rb = rebase
+[apply]
+    whitespace = fix
+[color]
+    ui = auto
+[core]
+    safecrlf = warn
+    whitespace = space-before-tab,trailing-space
+
+Being able to have commitable gitconfig
+=======================================
+Don't include my github token in the git config file, have it reference an untracked file which stores that data. This should be similar to the "IdentityFile" attribute in the ssh config file.
