@@ -14,7 +14,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(linum ((t (:inherit (shadow default) :background "grey10")))))
+ ; '(linum ((t (:inherit (shadow default) :background "grey10"))))
+ )
 
 ;; Marmalade for emacs package installs
 (require 'package)
@@ -106,15 +107,16 @@
 ;; Dealing makes sure to always have the most up to date file
 (global-auto-revert-mode 1)
 
-;; nxhtml --> colors javascript, css, php properly inside a html page
-(load "~/.emacs.d/conf/nxhtml/autostart.el")
-(require 'nxhtml-mumamo)
-;(setq mumamo-background-colors nil)
-;; Teaching nxhtml about html5
-;; (add-to-list 'load-path "~/.emacs.d/conf/html5-el/")
-;; (eval-after-load "rng-loc"
-;;  '(add-to-list 'rng-schema-locating-files "~/.emacs.d/conf/html5-el/schemas.xml"))
-;; (require 'whattf-dt)
+;; Beautiful HTML things, just what I was looking for
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; Matching parens
 (show-paren-mode 1)
@@ -178,50 +180,9 @@
 ;; Unique buffer names
 (require 'uniquify)
 
-;; Flymake mode
-; (load-library "flymake-cursor")
-
-;; Python mode
-; (add-to-list 'load-path "~/.emacs.d/conf/python-mode") 
-; (setq py-install-directory "~/.emacs.d/conf/python-mode")
-; (require 'python-mode)
-
-;; Pyflakes constant check
-; Need to have pyflakes intalled on the computer
-; Only works when flymake-mode is enabled
-; http://www.plope.com/Members/chrism/flymake-mode
-;(when (load "flymake" t) 
-;    (defun flymake-pyflakes-init () 
-;    (let* ((temp-file (flymake-init-create-temp-buffer-copy 
-;                        'flymake-create-temp-inplace)) 
-;            (local-file (file-relative-name 
-;                         temp-file 
-;                         (file-name-directory buffer-file-name)))) 
-;       (list "pyflakes" (list local-file)))) 
-;
-;   (add-to-list 'flymake-allowed-file-name-masks 
-;                '("\\.py\\'" flymake-pyflakes-init))) 
-; (add-hook 'find-file-hook 'flymake-find-file-hook)
-
-;; Pylint current buffer
-; (defun lint-buffer ()
-;   "Run lint script on current buffer"
-;   (interactive)
-;   (compile (concat
-;             "~/.emacs.d/conf/pylint/pylint.sh "
-;             (buffer-file-name))))
-
 
 ;; Ido mode
 (ido-mode 1)
-
-;; Icicles
-; (add-to-list 'load-path "~/.emacs.d/conf/icicles") 
-; (require 'icicles)
-
-;; Find in Project
-; (add-to-list 'load-path "~/.emacs.d/conf/rinari")
-; (require 'find-file-in-project)
 
 ;; Git
 (add-to-list 'load-path "~/.emacs.d/conf/git")

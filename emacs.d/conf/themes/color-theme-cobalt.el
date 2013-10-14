@@ -45,13 +45,13 @@
   (interactive)
   (color-theme-install
    '(color-theme-cobalt
-     ((background-color . "#1c1c1c")
+     ((background-color . "#000000")
       (background-mode . dark)
       (border-color . "black")
       (cursor-color . "#A7A7A7")
       (foreground-color . "#F8F8F8"))
-     (default ((t (:background "#1c1c1c" :foreground "white"))))
-     (buffers-tab ((t (:background "#1c1c1c" :foreground "white"))))
+     (default ((t (:background "#000000" :foreground "white"))))
+     (buffers-tab ((t (:background "#000000" :foreground "white"))))
      (font-lock-builtin-face ((t (:foreground "#40FFB9"))))
      (font-lock-comment-face ((t (:foreground "#008AFF"))))
      (font-lock-constant-face ((t (:foreground "#FF518C"))))
