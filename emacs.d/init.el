@@ -3,243 +3,85 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#ffffff" "#bf616a" "#B4EB89" "#ebcb8b" "#89AAEB" "#C189EB" "#89EBCA" "#232830"))
+ '(autopair-global-mode t)
  '(column-number-mode t)
+ '(custom-enabled-themes (quote (base16-default)))
+ '(custom-safe-themes
+   (quote
+    ("ae8d0f1f36460f3705b583970188e4fbb145805b7accce0adb41031d99bd2580" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" default)))
+ '(custom-theme-load-path
+   (quote
+    ("/Users/etan/.emacs.d/elpa/base16-theme-20130413.1655/" "/Users/etan/.emacs.d/elpa/spacegray-theme-20131230.1127/" custom-theme-directory t)))
+ '(delete-selection-mode t)
+ '(fci-rule-color "#343d46")
+ '(fringe-mode 0 nil (fringe))
+ '(global-auto-revert-mode t)
+ '(global-linum-mode t)
+ '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
+ '(js-indent-level 2)
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
- '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify)))
+ '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#bf616a")
+     (40 . "#DCA432")
+     (60 . "#ebcb8b")
+     (80 . "#B4EB89")
+     (100 . "#89EBCA")
+     (120 . "#89AAEB")
+     (140 . "#C189EB")
+     (160 . "#bf616a")
+     (180 . "#DCA432")
+     (200 . "#ebcb8b")
+     (220 . "#B4EB89")
+     (240 . "#89EBCA")
+     (260 . "#89AAEB")
+     (280 . "#C189EB")
+     (300 . "#bf616a")
+     (320 . "#DCA432")
+     (340 . "#ebcb8b")
+     (360 . "#B4EB89"))))
+ '(vc-annotate-very-old-color nil)
+ '(window-number-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ; '(linum ((t (:inherit (shadow default) :background "grey10"))))
- )
+ '(default ((t (:inherit nil :stipple nil :background "#202020" :foreground "#e0e0e0" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 120 :width normal :foundry "nil" :family "Source Code Pro"))))
+ '(bold ((t (:weight semi-bold))))
+ '(bold-italic ((t (:slant italic :weight semi-bold))))
+ '(error ((t (:foreground "Pink" :weight semi-bold))))
+ '(helm-source-header ((t (:background "#22083397778B" :foreground "white" :weight semi-bold :height 1.3))))
+ '(linum ((t (:background "#505050" :foreground "#e0e0e0"))))
+ '(mode-line-buffer-id ((t (:weight semi-bold))))
+ '(mode-line-emphasis ((t (:weight semi-bold))))
+ '(success ((t (:foreground "Green1" :weight semi-bold))))
+ '(tty-menu-enabled-face ((t (:background "blue" :foreground "yellow" :weight semi-bold))))
+ '(warning ((t (:foreground "DarkOrange" :weight semi-bold)))))
 
-;; Marmalade for emacs package installs
-(require 'package)
-(add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
-(package-initialize)
+;; ELPA package archives
+(setq package-archives 
+    '(("gnu" .
+       "http://elpa.gnu.org/packages/")
+      ("marmalade" .
+       "https://marmalade-repo.org/packages/")
+      ("melpa" .
+       "http://melpa.milkbox.net/packages/")))
 
-;; Load auto-complete on startup
-(require 'auto-complete-config)
-(ac-config-default)
+(defvar emacs-dir (file-name-directory load-file-name)
+  "The root .emacs.d dir.")
+(defvar personal-dir (expand-file-name "personal" emacs-dir)
+  "User's custom configurations.")
+(add-to-list 'load-path personal-dir)
 
-(put 'upcase-region 'disabled nil)
-
-;; Ctrl-h means delete, not help
-;(global-set-key [?\C-h] 'delete-backward-char)
-
-;; Set tab size in C
-(setq c-basic-offset '8)
-
-;; Shortcut to compile code
-(global-set-key [?\C-c ?\c] 'compile)
-
-;; Shortcut to comment line or region of code
-(global-set-key [?\C-\M-c] 'comment-or-uncomment-region-or-line)
-
-;; C kernel coding styles
-(defun c-lineup-arglist-tabs-only (ignored)
-  "Line up argument lists by tabs, not spaces"
-  (let* ((anchor (c-langelem-pos c-syntactic-element))
-	 (column (c-langelem-2nd-pos c-syntactic-element))
-	 (offset (- (1+ column) anchor))
-	 (steps (floor offset c-basic-offset)))
-    (* (max steps 1)
-       c-basic-offset)))
-
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            ;; Add kernel style
-            (c-add-style
-             "linux-tabs-only"
-             '("linux" (c-offsets-alist
-                        (arglist-cont-nonempty
-                         c-lineup-gcc-asm-reg
-                         c-lineup-arglist-tabs-only))))))
-
-(add-hook 'c-mode-hook
-          (lambda ()
-            (let ((filename (buffer-file-name)))
-              ;; Enable kernel mode for the appropriate files
-              (when (and filename
-                         (string-match (expand-file-name "~/src/linux-trees")
-                                       filename))
-                (setq indent-tabs-mode t)
-                (c-set-style "linux-tabs-only")))))
-
-(add-hook 'after-make-frame-functions
-          (lambda (&optional frame)
-            (select-frame frame)
-            (unless (display-graphic-p)
-              ;; enable mouse reporting for terminal emulators
-              (xterm-mouse-mode t)
-              (global-set-key [mouse-4] '(lambda ()
-                                           (interactive)
-                                           (scroll-down 1)))
-              (global-set-key [mouse-5] '(lambda ()
-                                           (interactive)
-                                           (scroll-up 1))))))
-
-(when (boundp 'input-decode-map)
-  (define-key input-decode-map "^[[1;5C" [(control right)])
-  (define-key input-decode-map "^[[1;5D" [(control left)]))
-
-(add-to-list 'load-path "~/.emacs.d/conf/")
-
-;; Soft tabs
-(setq-default indent-tabs-mode nil)
-
-;; Reverts all buffers
-(defun revert-all-buffers ()
-    "Refreshes all open buffers from their respective files."
-    (interactive)
-    (dolist (buf (buffer-list))
-      (with-current-buffer buf
-        (when (and (buffer-file-name) (not (buffer-modified-p)))
-          (revert-buffer t t t) )))
-    (message "Refreshed open files.") )
-
-;; Dealing makes sure to always have the most up to date file
-(global-auto-revert-mode 1)
-
-;; Beautiful HTML things, just what I was looking for
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-;; Matching parens
-(show-paren-mode 1)
-;; Adds closing quote, paren, etc. when first is added
-(load "~/.emacs.d/conf/autopair.el")
-(require 'autopair)
-(autopair-global-mode 1)
-
-;; Line numbers, and turning them off in non-code buffers
-(load "~/.emacs.d/conf/linum/linum.el")
-(require 'linum)
-(load-file "~/.emacs.d/conf/linum/linum-off.el")
-
-;; Deletes highlighted content
-(delete-selection-mode 1)
-
-;; Potential to highlight a column
-(require 'fill-column-indicator)
-(setq-default fci-rule-column 80)
-(add-hook 'c-mode-hook 'fci-mode)
-(add-hook 'python-mode-hook 'fci-mode)
-
-;; Inserting 'import bpdb; bppdb.set_trace()' on M-p
-(eval-after-load 'python
-  '(define-key python-mode-map [?\M-p] 'add-py-debug))
-
-;; ;; Jedi mode for python
-(setq jedi:setup-keys t)
-(setq jedi:key-goto-definition (kbd "C-c ."))
-(setq jedi:key-complete (kbd "<backtab>"))
-(setq jedi:complete-on-dot t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
-
-;; Color Theme
-(load "~/.emacs.d/conf/color-theme.el")
-(require 'color-theme)
-(load-file "~/.emacs.d/conf/themes/color-theme-cobalt.el")
-(require 'color-theme-cobalt)
-(load-file "~/.emacs.d/conf/themes/color-theme-sunburst.el")
-(require 'color-theme-sunburst)
-(color-theme-initialize)
-;; (color-theme-sunburst)
-(color-theme-cobalt)
-;; (load-file "~/.emacs.d/conf/themes/monokai-theme.el")
-;; (load-theme 'monokai t)
-(add-to-list 'custom-theme-load-path "~/.emacs.d/conf/themes/emacs-color-theme-solarized/")
-;(load-theme 'solarized-dark t)
-
-;; Add markdown sytax highlighting
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;; Highlight wscript files with proper python syntax highlighting
-(add-to-list 'auto-mode-alist '("wscript\\'" . python-mode))
-
-;; gyp files are highlighted with json-mode
-(add-to-list 'auto-mode-alist '("\\.gyp\\'" . json-mode))
-
-;; Unique buffer names
-(require 'uniquify)
-
-
-;; Ido mode
-(ido-mode 1)
-
-;; Git
-(add-to-list 'load-path "~/.emacs.d/conf/git")
-(require 'git)
-(require 'git-blame)
-
-;; iterm + mouse
-(require 'mouse)
-(xterm-mouse-mode t)
-(global-set-key [mouse-4] '(lambda ()
-                             (interactive)
-                             (scroll-down 1)))
-(global-set-key [mouse-5] '(lambda ()
-                             (interactive)
-                             (scroll-up 1)))
-(defun track-mouse (e))
-
-;; Textmate minor mode
-(add-to-list 'load-path "~/.emacs.d/conf/textmate")
-(require 'textmate)
-(textmate-mode 1)
-
-;; Column number mode
-(column-number-mode 1)
-
-;; Django mode
-(require 'python-django)
-
-;; import pdb things
-(defun add-py-debug ()  
-      "add debug code and move line down"  
-    (interactive)  
-    (insert "import bpdb; bpdb.set_trace()"))  
-
-;; cmake mode
-(setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
-(require 'cmake-mode)
-(setq auto-mode-alist
-      (append '(("CMakeLists\\.txt\\'" . cmake-mode)
-                ("\\.cmake\\'" . cmake-mode))
-              auto-mode-alist))
-
-;; ;; Lisp
-;; (load (expand-file-name "~/Development/lisp/quicklisp/slime-helper.el"))
-;; (setq inferior-lisp-program "/usr/local/bin/sbcl") ; Replace "sbcl" with the path to your implementation
-;; ;; Basic slime
-;; (add-to-list 'load-path "~/Development/lisp/slime/")  ; your SLIME directory
-;; (require 'slime)
-;; (slime-setup)
-;; ;; Even more fun slime things
-;; (require 'slime-autoloads)
-;; (slime-setup '(slime-scratch slime-editing-commands))
-;; ;; (slime-setup '(slime-repl)) ; repl only
-;; (slime-setup '(slime-fancy)) ; almost everything
-
-;; ;; Scheme
-;; (load-library "xscheme")
-
-;; Turns line numbers on
-(global-linum-mode 1)
+(add-hook 'after-init-hook (lambda () (load (expand-file-name "after-init.el" emacs-dir))))

@@ -1,5 +1,0 @@
-ls
-cd
-cd -
-echo $TERM
-echo $SHELL
