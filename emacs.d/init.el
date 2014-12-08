@@ -73,6 +73,10 @@
  '(tty-menu-enabled-face ((t (:background "blue" :foreground "yellow" :weight semi-bold))))
  '(warning ((t (:foreground "DarkOrange" :weight semi-bold)))))
 
+
+;; Install all packages if they're not installed already
+(setq package-list '(ag s dash autopair base16-theme coffee-mode fill-column-indicator flycheck pkg-info epl dash handlebars-mode helm-git-grep helm async helm-projectile projectile pkg-info epl dash f dash s s helm async helm-swoop helm async jedi python-environment deferred auto-complete popup epc ctable concurrent deferred json-mode json-snatcher json-reformat json-reformat json-snatcher linum-off magit git-rebase-mode git-commit-mode markdown-mode miniedit multiple-cursors neotree popup powerline projectile pkg-info epl dash f dash s s protobuf-mode python-environment deferred rainbow-mode robe inf-ruby rspec-mode rvm s sass-mode haml-mode slim-mode spacegray-theme textmate web-mode window+ window-number yaml-mode))
+
 ;; ELPA package archives
 (setq package-archives 
     '(("gnu" .
@@ -81,6 +85,17 @@
        "https://marmalade-repo.org/packages/")
       ("melpa" .
        "http://melpa.milkbox.net/packages/")))
+
+; activate all the packages (in particular autoloads)
+(package-initialize)
+; fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 
 (defvar emacs-dir (file-name-directory load-file-name)
   "The root .emacs.d dir.")
