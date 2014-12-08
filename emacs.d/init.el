@@ -8,6 +8,7 @@
  '(ansi-color-names-vector
    (vector "#ffffff" "#bf616a" "#B4EB89" "#ebcb8b" "#89AAEB" "#C189EB" "#89EBCA" "#232830"))
  '(autopair-global-mode t)
+ '(backup-directory-alist (quote (("." . "~/.emacs.d/backups"))))
  '(column-number-mode t)
  '(custom-enabled-themes (quote (base16-default)))
  '(custom-safe-themes
@@ -16,6 +17,7 @@
  '(custom-theme-load-path
    (quote
     ("/Users/etan/.emacs.d/elpa/base16-theme-20130413.1655/" "/Users/etan/.emacs.d/elpa/spacegray-theme-20131230.1127/" custom-theme-directory t)))
+ '(delete-old-versions (quote other))
  '(delete-selection-mode t)
  '(fci-rule-color "#343d46")
  '(fringe-mode 0 nil (fringe))
@@ -51,13 +53,15 @@
      (340 . "#ebcb8b")
      (360 . "#B4EB89"))))
  '(vc-annotate-very-old-color nil)
+ '(vc-make-backup-files t)
+ '(version-control t)
  '(window-number-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#202020" :foreground "#e0e0e0" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 120 :width normal :foundry "nil" :family "Source Code Pro"))))
+ '(default ((t (:inherit nil :stipple nil :background "#202020" :foreground "#e0e0e0" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight light :height 100 :width normal :foundry "nil" :family "Source Code Pro"))))
  '(bold ((t (:weight semi-bold))))
  '(bold-italic ((t (:slant italic :weight semi-bold))))
  '(error ((t (:foreground "Pink" :weight semi-bold))))
