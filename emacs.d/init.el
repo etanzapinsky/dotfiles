@@ -13,10 +13,11 @@
  '(custom-enabled-themes (quote (base16-default)))
  '(custom-safe-themes
    (quote
-    ("ae8d0f1f36460f3705b583970188e4fbb145805b7accce0adb41031d99bd2580" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" default)))
+    ("8022cea21aa4daca569aee5c1b875fbb3f3248a5debc6fc8cf5833f2936fbb22" "ae8d0f1f36460f3705b583970188e4fbb145805b7accce0adb41031d99bd2580" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" default)))
+ ;; Remember to change this load path when you update the theme so it can find the right theme
  '(custom-theme-load-path
    (quote
-    ("/Users/etan/.emacs.d/elpa/base16-theme-20130413.1655/" "/Users/etan/.emacs.d/elpa/spacegray-theme-20131230.1127/" custom-theme-directory t)))
+    ("/Users/etan/.emacs.d/elpa/base16-theme-20150127.1939/" custom-theme-directory t)))
  '(delete-old-versions (quote other))
  '(delete-selection-mode t)
  '(fci-rule-color "#343d46")
@@ -27,6 +28,7 @@
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
  '(js-indent-level 2)
+ '(ns-function-modifier (quote hyper))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)

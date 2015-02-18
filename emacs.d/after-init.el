@@ -26,6 +26,10 @@
 ;; ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; old newline/newline-and-indent behvior
+(global-set-key (kbd "C-j") 'newline)
+(global-set-key (kbd "RET") 'electric-indent-just-newline)
+
 ;; y instead of yes
 (fset 'yes-or-no-p 'y-or-n-p)
 
