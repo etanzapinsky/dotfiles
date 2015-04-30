@@ -1,0 +1,20 @@
+;; -*- emacs-lisp -*- <15/03/24 10:29:37 /Users/etan/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["ssh" "etan" "awa140.sjc1" nil nil]
+  nil)
+ (["ssh" "pi" "10.0.1.63" nil nil]
+  nil)
+ (["scp" "etan" "awa140.sjc1" nil nil]
+  nil)
+ (["ssh" nil "10.0.1.63" nil nil]
+  nil)
+ (["scp" nil "ssh" nil nil]
+  nil)
+ (["ssh" "pi" "raspberry" nil nil]
+  nil)
+ (["scp" nil "sshx" nil nil]
+  nil)
+ (["ssh" nil "pi" nil nil]
+  nil))
