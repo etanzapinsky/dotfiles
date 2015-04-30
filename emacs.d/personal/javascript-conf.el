@@ -16,6 +16,6 @@
 (eval-after-load 'javascript-mode
   '(define-key javascript-mode-map [?\M-p] 'add-debugger))
 
-(provide 'js-conf)
+(provide 'javascript-conf)
 
 ;;; javascript-conf.el ends here

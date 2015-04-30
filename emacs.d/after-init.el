@@ -59,8 +59,8 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; Powerline
-(require 'powerline)
-(powerline-default-theme)
+;; (require 'powerline)
+;; (powerline-default-theme)
 
 ;; My personal configs - loaded from `personal-dir`, ie. .emacs.d/personal
 (require 'python-conf)
@@ -72,7 +72,6 @@
 (require 'helm-conf)
 (require 'go-conf)
 (require 'company-conf)
-(require 'tramp-conf)
 (require 'org-conf)
 
 ;;; after-init.el ends here
