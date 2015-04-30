@@ -1,7 +1,9 @@
 auto-save-list/
 elpa/
 eshell/
-.mc-lists.el
-*.elc
-*.dat
 .cask/
+
+.mc-lists.el
+bookmarks
+
+*.elc
