@@ -1,8 +1,9 @@
-;;; after-init.el --- Config to be run after packages are initialized
+;;; general-conf.el --- General configs
 ;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 ;; Copyright (C) 2015 Etan Zapinsky
 
 ;;; Commentary:
+;; General configurations that are too short to fit into a mode specific conf.
 
 ;;; History:
 
@@ -14,9 +15,6 @@
 ;; Turn linums off in Emacs * buffers
 (require 'linum-off)
 
-;; Load auto-complete on startup
-;; (require 'auto-complete-config)
-;; (ac-config-default)
 ;; Load company-mode on startup -- different module that has same functionality as auto-complete
 (global-company-mode 1)
 
@@ -62,16 +60,6 @@
 ;; (require 'powerline)
 ;; (powerline-default-theme)
 
-;; My personal configs - loaded from `personal-dir`, ie. .emacs.d/personal
-(require 'python-conf)
-(require 'ruby-conf)
-(require 'javascript-conf)
-(require 'c-conf)
-(require 'protobuf-conf)
-(require 'iterm-conf)
-(require 'helm-conf)
-(require 'go-conf)
-(require 'company-conf)
-(require 'org-conf)
+(provide 'general-conf)
 
 ;;; after-init.el ends here

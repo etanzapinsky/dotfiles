@@ -27,6 +27,18 @@
 (setq custom-file customize-el)
 (load custom-file)
 
-(add-hook 'after-init-hook (lambda () (load (expand-file-name "after-init.el" emacs-dir))))
+;; Configs to load from personal after init is done
+(add-hook 'after-init-hook (lambda ()
+                             (require 'general-conf)
+                             (require 'python-conf)
+                             (require 'ruby-conf)
+                             (require 'javascript-conf)
+                             (require 'c-conf)
+                             (require 'protobuf-conf)
+                             (require 'iterm-conf)
+                             (require 'helm-conf)
+                             (require 'go-conf)
+                             (require 'company-conf)
+                             (require 'org-conf)))
 
 ;;; init.el ends here
