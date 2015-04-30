@@ -1,40 +1,43 @@
-;; (require 'color)
+;;; company-conf.el --- Config for company minor mode
 
-;; (let ((bg (face-attribute 'default :background)))
-;;   (custom-set-faces
-;;    `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
-;;    `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
-;;    `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
-;;    `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
-;;    `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
+;; Copyright (C) 2015 Etan Zapinsky
 
-;; (custom-set-faces
-;;  '(company-preview
-;;    ((t (:foreground "darkgray" :underline t))))
-;;  '(company-preview-common
-;;    ((t (:inherit company-preview))))
-;;  '(company-tooltip
-;;    ((t (:background "lightgray" :foreground "black"))))
-;;  '(company-tooltip-selection
-;;    ((t (:background "steelblue" :foreground "white"))))
-;;  '(company-tooltip-common
-;;    ((((type x)) (:inherit company-tooltip :weight bold))
-;;     (t (:inherit company-tooltip))))
-;;  '(company-tooltip-common-selection
-;;    ((((type x)) (:inherit company-tooltip-selection :weight bold))
-;;     (t (:inherit company-tooltip-selection)))))
+;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 
-(setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
-(setq company-echo-delay 0)                          ; remove annoying blinking
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 2, or (at
+;; your option) any later version.
+
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs; see the file COPYING.  If not, write to the
+;; Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+;; Boston, MA 02111-1307, USA.
+
+;;; Commentary:
+
+;;; History:
+
+;;; Code:
+
+(setq company-idle-delay .3) ; decrease delay before autocompletion popup shows
+(setq company-echo-delay 0) ; remove annoying blinking
 
 (defvar-local company-fci-mode-on-p nil)
 
 (defun company-turn-off-fci (&rest ignore)
+  "Turn off fci minor mode when using company minor mode."
   (when (boundp 'fci-mode)
     (setq company-fci-mode-on-p fci-mode)
     (when fci-mode (fci-mode -1))))
 
 (defun company-maybe-turn-on-fci (&rest ignore)
+  "Turn on fci minor mode when done using company minor mode."
   (when company-fci-mode-on-p (fci-mode 1)))
 
 (add-hook 'company-completion-started-hook 'company-turn-off-fci)
@@ -42,3 +45,5 @@
 (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
 
 (provide 'company-conf)
+
+;;; company-conf.el ends here

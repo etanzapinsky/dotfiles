@@ -1,6 +1,6 @@
-(source "marmalade" "https://marmalade-repo.org/packages/")
-(source "melpa" "http://melpa.milkbox.net/packages/")
 (source gnu)
+(source melpa)
+(source org)
 
 (depends-on "ace-window")
 (depends-on "ag")

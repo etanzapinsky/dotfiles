@@ -1,4 +1,4 @@
-;;; init.el --- My emacs init file
+;;; javascript-conf.el --- Config for javascript minor mode
 
 ;; Copyright (C) 2015 Etan Zapinsky
 
@@ -25,25 +25,14 @@
 
 ;;; Code:
 
-(require 'cask "/usr/local/share/emacs/site-lisp/cask.el")
-(cask-initialize)
-(require 'pallet)
-(pallet-mode t)
+;; Insert "debugger;" on M-p
+(defun add-debugger ()
+      "Add debugger statement."
+    (interactive)
+    (insert "debugger;"))
+(eval-after-load 'javascript-mode
+  '(define-key javascript-mode-map [?\M-p] 'add-debugger))
 
-(defvar emacs-dir (file-name-directory load-file-name)
-  "The root .emacs.d directory.")
-(defvar personal-dir (expand-file-name "personal" emacs-dir)
-  "Directory for user's mode specific configurations.")
-(defvar customize-el (expand-file-name "customize.el" emacs-dir)
-  "User's custom config installed by customize.")
+(provide 'js-conf)
 
-;; Load personalizations
-(add-to-list 'load-path personal-dir)
-
-;; Sets file so place configurations saved by customize
-(setq custom-file customize-el)
-(load custom-file)
-
-(add-hook 'after-init-hook (lambda () (load (expand-file-name "after-init.el" emacs-dir))))
-
-;;; init.el ends here
+;;; javascript-conf.el ends here
