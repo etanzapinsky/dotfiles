@@ -74,11 +74,7 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; Smart mode line
-(setq sml/theme 'dark)
 (sml/setup)
-
-;; Color theme
-;; (load-theme 'base16-flat-light t)
 
 ;; Are you sure you want to quit?
 (defun ask-before-closing ()

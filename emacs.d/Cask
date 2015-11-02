@@ -35,8 +35,6 @@
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
 (depends-on "git-commit")
-(depends-on "git-commit-mode")
-(depends-on "git-rebase-mode")
 (depends-on "go-autocomplete")
 (depends-on "go-eldoc")
 (depends-on "go-mode")
