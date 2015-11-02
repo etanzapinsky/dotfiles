@@ -55,6 +55,8 @@
 (global-set-key (kbd "s-<down>")  'windmove-down)
 
 ;; Zoom keybindings
+(autoload 'zoom-in/out "zoom-frm"
+  "Zoom current frame or buffer in or out" t)
 (global-set-key (kbd "C-+") 'zoom-in/out)
 (global-set-key (kbd "C--") 'zoom-in/out)
 (global-set-key (kbd "C-=") 'zoom-in/out)
@@ -76,7 +78,7 @@
 (sml/setup)
 
 ;; Color theme
-(load-theme 'base16-flat-light t)
+;; (load-theme 'base16-flat-light t)
 
 ;; Are you sure you want to quit?
 (defun ask-before-closing ()
