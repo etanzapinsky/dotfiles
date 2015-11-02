@@ -30,6 +30,7 @@
 (global-set-key (kbd "C-o") 'helm-occur)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "M-t") 'helm-projectile)
+(global-set-key (kbd "C-x r h") 'helm-resume)
 
 (setq
  helm-google-suggest-use-curl-p t
@@ -55,6 +56,13 @@
 
 ;; Save current position to mark ring when jumping to a different place
 (add-hook 'helm-goto-line-before-hook 'helm-save-current-pos-to-mark-ring)
+
+;; Always display helm at the bottom of the emacs screen
+;; (add-to-list 'display-buffer-alist
+;;                     `(,(rx bos "*helm" (* not-newline) "*" eos)
+;;                          (display-buffer-in-side-window)
+;;                          (inhibit-same-window . t)
+;;                          (window-height . 0.35)))
 
 ;; ---------
 ;; Swoop

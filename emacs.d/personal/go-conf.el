@@ -24,8 +24,23 @@
   "Path to goimports executable.")
 (setq gofmt-command goimports-path)
 
+;; Go oracle
+(defvar gooracle-file (expand-file-name "src/golang.org/x/tools/cmd/oracle/oracle.el" (getenv "GOPATH"))
+  "Path to gooracle executable.")
+(load gooracle-file)
+(add-hook 'go-mode-hook 'go-oracle-mode)
+
+;; Go rename
+(defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/rename.el" (getenv "GOPATH"))
+  "Path to gorename executable.")
+(load gorename-file)
+
 ;; Autoload entries and associate *.go files with go-mode
 (require 'go-mode-autoloads)
+
+;; Add go company backend
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-go))
 
 ;; Go tab width
 ;; Sets tab size for dev at 2 spaces, but always is one tab char
@@ -37,15 +52,23 @@
   (local-set-key (kbd "M-.") 'godef-jump)
   ; Return back to previous spot
   (local-set-key (kbd "M-,") 'pop-tag-mark)
+  ; Run godoc
+  (local-set-key (kbd "C-'") 'godoc)
+  ; Compile and run tests
+  (local-set-key (kbd "C-c C-c") 'compile)
+  ; Go rename
+  (local-set-key (kbd "C-%") 'go-rename)
+  ; Go test current test
+  (local-set-key (kbd "C-c C-r") 'go-test-current-test)
+  ; Go test current file
+  (local-set-key (kbd "C-c C-t") 'go-test-current-file)
+  ; Go test current project
+  (local-set-key (kbd "C-c C-p") 'go-test-current-project)
   ; Customize compile command to run go build
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
-           "go build -v && go test -v && go vet")))
+           "go install -v && go test -v")))
 (add-hook 'go-mode-hook 'my-go-mode-hook)
-
-;; Using company-mode
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-go))
 
 (provide 'go-conf)
 

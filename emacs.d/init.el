@@ -8,7 +8,7 @@
 
 ;;; Code:
 
-(require 'cask "/usr/local/share/emacs/site-lisp/cask.el")
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
@@ -30,15 +30,16 @@
 ;; Configs to load from personal after init is done
 (add-hook 'after-init-hook (lambda ()
                              (require 'general-conf)
+                             (require 'company-conf)
+                             (require 'helm-conf)
+                             (require 'iterm-conf)
                              (require 'python-conf)
                              (require 'ruby-conf)
                              (require 'javascript-conf)
                              (require 'c-conf)
                              (require 'protobuf-conf)
-                             (require 'iterm-conf)
-                             (require 'helm-conf)
                              (require 'go-conf)
-                             (require 'company-conf)
-                             (require 'org-conf)))
+                             (require 'org-conf)
+                             (require 'coffee-conf)))
 
 ;;; init.el ends here
