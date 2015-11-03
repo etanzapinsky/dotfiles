@@ -73,7 +73,17 @@
 ;; Multiple cursors
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+;; Magit edit commit messages etc with editor
+(add-hook 'shell-mode-hook  'with-editor-export-editor)
+(add-hook 'term-mode-hook   'with-editor-export-editor)
+(add-hook 'eshell-mode-hook 'with-editor-export-editor)
+
 ;; Smart mode line
+(setq sml/theme 'dark)
 (sml/setup)
 
 ;; Are you sure you want to quit?
