@@ -8,7 +8,7 @@
 
 # Adds bin where python installs packages 
 # and adds bin where brew installs programs
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path to the bash it configuration
 export BASH_IT=$HOME/.bash_it
