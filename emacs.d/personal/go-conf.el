@@ -25,13 +25,15 @@
 (setq gofmt-command goimports-path)
 
 ;; Go oracle
-(defvar gooracle-file (expand-file-name "src/golang.org/x/tools/cmd/oracle/oracle.el" (getenv "GOPATH"))
+(defvar gooracle-executable (expand-file-name "bin/oracle" (getenv "GOPATH"))
   "Path to gooracle executable.")
+(setq go-oracle-command gooracle-executable)
+(defvar gooracle-file (expand-file-name "src/golang.org/x/tools/cmd/oracle/oracle.el" (getenv "GOPATH"))
+  "Path to gooracle elisp config.")
 (load gooracle-file)
-(add-hook 'go-mode-hook 'go-oracle-mode)
 
 ;; Go rename
-(defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/rename.el" (getenv "GOPATH"))
+(defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/go-rename.el" (getenv "GOPATH"))
   "Path to gorename executable.")
 (load gorename-file)
 
@@ -69,6 +71,9 @@
       (set (make-local-variable 'compile-command)
            "go install -v && go test -v")))
 (add-hook 'go-mode-hook 'my-go-mode-hook)
+
+;; Add gohtml files to web-mode
+(add-to-list 'auto-mode-alist '("\\.gohtml\\'" . web-mode))
 
 (provide 'go-conf)
 

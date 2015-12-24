@@ -103,6 +103,16 @@
 (require 'calfw)
 (require 'calfw-org)
 
+;; Perspective mode
+(persp-mode 1)
+
+;; Add html files to web-mode
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Start server for emacsclient when emacs starts
+(load "server")
+(unless (server-running-p) (server-start))
+
 (provide 'general-conf)
 
 ;;; after-init.el ends here

@@ -18,23 +18,26 @@
  '(ansi-color-names-vector
    ["#ecf0f1" "#e74c3c" "#2ecc71" "#f1c40f" "#2492db" "#9b59b6" "#1abc9c" "#2c3e50"])
  '(ansi-term-color-vector
-   [unspecified "#2C3E50" "#E74C3C" "#2ECC71" "#F1C40F" "#3498DB" "#9B59B6" "#3498DB" "#e0e0e0"])
+   [unspecified "#2C3E50" "#E74C3C" "#2ECC71" "#F1C40F" "#3498DB" "#9B59B6" "#3498DB" "#e0e0e0"] t)
  '(aw-keys (quote (97 115 100 102 103 104 106 107 108)))
  '(backup-directory-alist (quote (("." . "~/.emacs.d/backups"))))
  '(coffee-tab-width 2)
  '(column-number-mode t)
  '(compilation-scroll-output (quote first-error))
- '(custom-enabled-themes (quote (base16-flat-light smart-mode-line-dark)))
+ '(custom-enabled-themes (quote (smart-mode-line-dark base16-flat-light)))
  '(custom-safe-themes
    (quote
     ("f2503f0a035c2122984e90eb184185769ee665de5864edc19b339856942d2d2d" "ce585b387d84fc4bbb02b8766bfe82607f891e25602ec3550db858e09c10eb7d" "a922c743710bb5d7c14995345549141f01211ff5089057dc718a5a33104c3fd1" "3b24f986084001ae46aa29ca791d2bc7f005c5c939646d2b800143526ab4d323" "f5eb916f6bd4e743206913e6f28051249de8ccfd070eae47b5bde31ee813d55f" "7e346cf2cb6a8324930c9f07ce050e9b7dfae5a315cd8ed3af6bcc94343f8402" "b2028956188cf668e27a130c027e7f240c24c705c1517108b98a9645644711d9" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "d44939ef462b7efb9bb5739f2dd50b03ac9ecf98c4df6578edcf145d6a2d188d" "3a69621a68c2d3550a4c777ffc000e1ea66f5bc2f61112814c591e1bda3f5704" "a5ce06f368dd82a9dade9261bccf5c30e2c7415a582bbd0a9337ea9f6af9e265" "b880872e60d1c7090fcd3d89f287d2a5681e57be9ac90d4682ea442149f5135f" "29b652383ce8b04163146f05f522d8f000ddd97173c9715d7416998278edecd8" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "e80932ca56b0f109f8545576531d3fc79487ca35a9a9693b62bf30d6d08c9aaf" "2a86b339554590eb681ecf866b64ce4814d58e6d093966b1bf5a184acf78874d" "c56d90af9285708041991bbc780a073182cbe91721de17c6e7a8aac1380336b3" "bc471c0ae74c789645639c9ccbaf2092bb00e56c97f9449198de86fe3722a6bc" "31a01668c84d03862a970c471edbd377b2430868eccf5e8a9aec6831f1a0908d" "e3c90203acbde2cf8016c6ba3f9c5300c97ddc63fcb78d84ca0a144d402eedc6" "1297a022df4228b81bc0436230f211bad168a117282c20ddcba2db8c6a200743" "0ba649556dc51762e6794b92017f6f7406754ae3136eafef686d81c6da176cc5" "8022cea21aa4daca569aee5c1b875fbb3f3248a5debc6fc8cf5833f2936fbb22" "ae8d0f1f36460f3705b583970188e4fbb145805b7accce0adb41031d99bd2580" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "41b6698b5f9ab241ad6c30aea8c9f53d539e23ad4e3963abff4b57c0f8bf6730" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" "9bac44c2b4dfbb723906b8c491ec06801feb57aa60448d047dbfdbd1a8650897" "978ff9496928cc94639cb1084004bf64235c5c7fb0cfbcc38a3871eb95fa88f6" "53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" default)))
  '(delete-old-versions (quote other))
  '(delete-selection-mode t)
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-indent-mode nil)
  '(fci-rule-color "#343d46")
  '(fringe-mode 0 nil (fringe))
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
+ '(go-oracle-command "/Users/etan/Development/go/bin/oracle")
+ '(go-oracle-scope "square/up")
  '(helm-always-two-windows nil)
  '(helm-boring-file-regexp-list
    (quote
@@ -106,6 +109,30 @@
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)
  '(paradox-github-token t)
+ '(popwin-mode t)
+ '(popwin:special-display-config
+   (quote
+    (("*Miniedit Help*" :noselect t)
+     (help-mode)
+     (completion-list-mode :noselect t)
+     (compilation-mode :noselect t)
+     (grep-mode :noselect t)
+     (occur-mode :noselect t)
+     ("*Pp Macroexpand Output*" :noselect t)
+     ("*Shell Command Output*")
+     ("*vc-diff*")
+     ("*vc-change-log*")
+     (" *undo-tree*" :width 60 :position right)
+     ("^\\*anything.*\\*$" :regexp t)
+     ("*slime-apropos*")
+     ("*slime-macroexpansion*")
+     ("*slime-description*")
+     ("*slime-compilation*" :noselect t)
+     ("*slime-xref*")
+     (sldb-mode :stick t)
+     (slime-repl-mode)
+     (slime-connection-list-mode)
+     ("*Go Test*" :regexp nil))))
  '(rspec-use-rvm t)
  '(scroll-bar-mode nil)
  '(scroll-step 0)
@@ -134,6 +161,10 @@
  '(vc-annotate-very-old-color "#0a74b9")
  '(vc-make-backup-files t)
  '(version-control t)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-css-indent-offset 2)
+ '(web-mode-enable-engine-detection t)
+ '(web-mode-markup-indent-offset 2)
  '(when (not (facep (aref ansi-term-color-vector 0))))
  '(window-number-mode t))
 (custom-set-faces
@@ -142,8 +173,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight thin :height 110 :width condensed :foundry "nil" :family "Input Mono Narrow"))))
+ '(go-test--warning-face ((t (:foreground "goldenrod1"))))
+ '(helm-buffer-directory ((t (:foreground "#2492DB" :weight thin))))
+ '(helm-ff-directory ((t (:foreground "#2492DB" :weight thin))))
  '(helm-selection ((t (:background "#7F8C8D" :foreground "#2C3E50" :underline nil))))
  '(helm-selection-line ((t (:background "#7F8C8D" :foreground "#2C3E50"))))
- '(helm-source-header ((t (:background "#abd7f0" :foreground "black" :weight bold :height 1.3 :family "Input Sans Narrow")))))
+ '(helm-source-header ((t (:background "#abd7f0" :foreground "black" :weight bold :height 1.3 :family "Input Sans Narrow"))))
+ '(web-mode-block-control-face ((t (:inherit font-lock-keyword-face)))))
 
 ;;; customize.el ends here
