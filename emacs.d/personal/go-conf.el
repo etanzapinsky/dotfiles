@@ -69,7 +69,7 @@
   ; Customize compile command to run go build
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
-           "go install -v && go test -v")))
+           "go install -v")))
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
 ;; Add gohtml files to web-mode
