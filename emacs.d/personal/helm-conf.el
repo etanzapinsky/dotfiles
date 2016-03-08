@@ -24,6 +24,7 @@
 (define-key helm-grep-mode-map (kbd "p")  'helm-grep-mode-jump-other-window-backward)
 
 ;; Some good helm keybindings
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring) ; helm for killring
 (global-set-key (kbd "C-x b") 'helm-mini) ; helm for changing buffers
 (global-set-key (kbd "C-c g") 'helm-git-grep)

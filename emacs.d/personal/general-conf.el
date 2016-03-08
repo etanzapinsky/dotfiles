@@ -106,6 +106,27 @@
 ;; Perspective mode
 (persp-mode 1)
 
+;; Winner mode -- undo window configuration changes
+(when (fboundp 'winner-mode)
+      (winner-mode 1))
+
+;; Imenu mode
+(global-set-key (kbd "C-c i") 'helm-imenu)
+
+;; Fix mismatch separator colors in modeline
+(setq ns-use-srgb-colorspace nil)
+
+;; Winner mode -- undo/redo window configs
+(when (fboundp 'winner-mode)
+      (winner-mode 1))
+
+;; Diminsh some minor modes which take up space unnecessarily
+(eval-after-load "helm" '(diminish 'helm-mode))
+(eval-after-load "company" '(diminish 'company-mode))
+(eval-after-load "textmate" '(diminish 'textmate-mode))
+(eval-after-load "flycheck" '(diminish 'flycheck-mode))
+(eval-after-load "auto-revert" '(diminish 'auto-revert-mode))
+
 ;; Add html files to web-mode
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
