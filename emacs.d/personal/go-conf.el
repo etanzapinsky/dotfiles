@@ -1,6 +1,7 @@
 ;;; go-conf.el --- Config for go major mode
 ;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 ;; Copyright (C) 2015 Etan Zapinsky
+;; -*-no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;; http://dominik.honnef.co/posts/2013/03/writing_go_in_emacs/
@@ -19,6 +20,9 @@
 
 ;;; Code:
 
+;; Go vendor experiment
+(exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
+
 (exec-path-from-shell-copy-env "GOPATH")
 (defvar goimports-path (expand-file-name "bin/goimports" (getenv "GOPATH"))
   "Path to goimports executable.")
@@ -36,9 +40,6 @@
 (defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/go-rename.el" (getenv "GOPATH"))
   "Path to gorename executable.")
 (load gorename-file)
-
-;; Autoload entries and associate *.go files with go-mode
-(require 'go-mode-autoloads)
 
 ;; Add go company backend
 (eval-after-load 'company
@@ -66,6 +67,10 @@
   (local-set-key (kbd "C-c C-t") 'go-test-current-file)
   ; Go test current project
   (local-set-key (kbd "C-c C-p") 'go-test-current-project)
+  ; Go benchmark current benchmark
+  (local-set-key (kbd "C-c C-b") 'go-test-current-benchmark)
+  ; Go benchmark current file
+  (local-set-key (kbd "C-c C-n") 'go-test-current-file-benchmarks)
   ; Customize compile command to run go build
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)

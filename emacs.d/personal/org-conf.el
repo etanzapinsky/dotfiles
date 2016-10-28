@@ -1,6 +1,7 @@
 ;;; org-conf.el --- Config for org major mode
 ;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 ;; Copyright (C) 2015 Etan Zapinsky
+;; -*-no-byte-compile: t; -*-
 
 ;;; Commentary:
 

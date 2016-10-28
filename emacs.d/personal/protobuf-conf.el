@@ -1,6 +1,7 @@
 ;;; protobuf-conf.el --- Config for protobuf major mode
 ;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 ;; Copyright (C) 2015 Etan Zapinsky
+;; -*-no-byte-compile: t; -*-
 
 ;;; Commentary:
 

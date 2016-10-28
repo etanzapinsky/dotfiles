@@ -1,6 +1,7 @@
 ;;; ruby-conf.el --- Config for ruby major mode
 ;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 ;; Copyright (C) 2015 Etan Zapinsky
+;; -*-no-byte-compile: t; -*-
 
 ;;; Commentary:
 
@@ -12,9 +13,8 @@
 (setq-default fci-rule-column 100)
 (add-hook 'ruby-mode-hook 'fci-mode)
 
-;; Set ruby version to 2.1.2
+;; Set ruby version to shell version
 (exec-path-from-shell-copy-env "RUBY_VERSION")
-(exec-path-from-shell-copy-env "rvm")
 
 ;; Insert "require 'pry'; binding.pry" on M-p
 (defun add-rb-debug ()
@@ -33,9 +33,6 @@
 
 ;; Ruby sane indenting
 (setq ruby-deep-indent-paren nil)
-
-;; Use the right ruby
-(rvm-use-default)
 
 ;; Enable robe mode for ruby files
 (add-hook 'ruby-mode-hook 'robe-mode)

@@ -1,6 +1,7 @@
 ;;; general-conf.el --- General configs
 ;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 ;; Copyright (C) 2015 Etan Zapinsky
+;; -*-no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;; General configurations that are too short to fit into a mode specific conf.
@@ -53,6 +54,13 @@
 (global-set-key (kbd "s-<right>") 'windmove-right)
 (global-set-key (kbd "s-<up>")    'windmove-up)
 (global-set-key (kbd "s-<down>")  'windmove-down)
+
+;; Avy mode
+(global-set-key (kbd "C-;")   'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-M-;") 'avy-goto-char)
+
+;; Pop back to mark
+(global-set-key (kbd "C-,") 'pop-to-mark-command)
 
 ;; Zoom keybindings
 (autoload 'zoom-in/out "zoom-frm"
@@ -113,12 +121,15 @@
 ;; Imenu mode
 (global-set-key (kbd "C-c i") 'helm-imenu)
 
+;; Enable projectile
+(projectile-global-mode)
+
 ;; Fix mismatch separator colors in modeline
 (setq ns-use-srgb-colorspace nil)
 
-;; Winner mode -- undo/redo window configs
-(when (fboundp 'winner-mode)
-      (winner-mode 1))
+;; Composable marking commands
+;; (require 'composable)
+;; (composable-mode)
 
 ;; Diminsh some minor modes which take up space unnecessarily
 (eval-after-load "helm" '(diminish 'helm-mode))
@@ -133,6 +144,23 @@
 ;; Start server for emacsclient when emacs starts
 (load "server")
 (unless (server-running-p) (server-start))
+
+;; Emoji support
+(set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji")
+                  nil 'append)
+
+;; Markdown mode to use olivetti mode
+(add-hook 'markdown-mode-hook (lambda ()
+                                (olivetti-mode t)))
+
+;; Tramp
+(require 'tramp)
+;; (tramp-set-completion-function "ssh"
+;;                                '((tramp-parse-sconfig "/etc/ssh/ssh_config")
+;;                                  (tramp-parse-sconfig "~/.ssh/config_personal")))
+;; (tramp-set-completion-function "scp"
+;;                                '((tramp-parse-sconfig "/etc/ssh/ssh_config")
+;;                                  (tramp-parse-sconfig "~/.ssh/config_personal")))
 
 (provide 'general-conf)
 

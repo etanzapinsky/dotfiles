@@ -1,6 +1,7 @@
 ;;; javascript-conf.el --- Config for javascript minor mode
 ;; Author: Etan Zapinsky <etan.zapinsky@gmail.com>
 ;; Copyright (C) 2015 Etan Zapinsky
+;; -*-no-byte-compile: t; -*-
 
 ;;; Commentary:
 
