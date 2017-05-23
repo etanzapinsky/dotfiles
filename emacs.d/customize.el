@@ -48,6 +48,7 @@
  '(global-linum-mode t)
  '(go-oracle-command "/Users/etan/Development/go/bin/oracle")
  '(go-oracle-scope "square/up")
+ '(go-test-verbose t)
  '(helm-always-two-windows nil)
  '(helm-boring-file-regexp-list
    (quote
