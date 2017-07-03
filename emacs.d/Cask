@@ -26,6 +26,7 @@
 (depends-on "deferred")
 (depends-on "diminish")
 (depends-on "drag-stuff")
+(depends-on "elpy")
 (depends-on "epc")
 (depends-on "epl")
 (depends-on "evil")

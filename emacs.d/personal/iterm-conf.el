@@ -31,10 +31,6 @@
               (global-set-key [mouse-5] '(lambda ()
                                            (interactive)
                                            (scroll-up 1))))))
-;; Shitty tmux input malformation (I think)
-(when (boundp 'input-decode-map)
-  (define-key input-decode-map "^[[1;5C" [(control right)])
-  (define-key input-decode-map "^[[1;5D" [(control left)]))
 ;; Terminal colors
 (defun terminal-init-screen ()
   "Terminal initialization function for screen-256color."

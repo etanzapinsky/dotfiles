@@ -33,6 +33,7 @@
  '(delete-selection-mode t)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-indent-mode nil)
+ '(elpy-rpc-python-command "python3")
  '(exec-path-from-shell-arguments (quote ("-i" "-l")))
  '(exec-path-from-shell-check-startup-files nil)
  '(face-font-family-alternatives
@@ -46,7 +47,7 @@
  '(fringe-mode 0 nil (fringe))
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
- '(go-oracle-command "/Users/etan/Development/go/bin/oracle")
+ '(go-oracle-command "/Users/etan/Development/go/bin/oracle" t)
  '(go-oracle-scope "square/up")
  '(go-test-verbose t)
  '(helm-always-two-windows nil)
@@ -63,6 +64,9 @@
  '(initial-buffer-choice nil)
  '(js-indent-level 2)
  '(kill-ring-max 1000)
+ '(mac-command-modifier (quote super))
+ '(mac-mouse-wheel-mode t)
+ '(mac-option-modifier (quote meta))
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(nrepl-message-colors
@@ -122,7 +126,7 @@
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens smart-mode-line slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
+    (elpy zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens smart-mode-line slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
  '(paradox-github-token t)
  '(popwin-mode t)
  '(popwin:special-display-config
@@ -148,6 +152,7 @@
      (slime-repl-mode)
      (slime-connection-list-mode)
      ("*Go Test*" :regexp nil))))
+ '(python-shell-interpreter "python3")
  '(rspec-use-rvm t)
  '(scalable-fonts-allowed t)
  '(scroll-bar-mode nil)

@@ -37,17 +37,15 @@
 
 ;; Configs to load from personal after init is done
 (add-hook 'after-init-hook (lambda ()
-                             (require 'general-conf)
+                             (require 'c-conf)
                              (require 'company-conf)
+                             (require 'general-conf)
+                             ;; (require 'go-conf)
                              (require 'helm-conf)
                              (require 'iterm-conf)
-                             (require 'python-conf)
-                             (require 'ruby-conf)
-                             (require 'javascript-conf)
-                             (require 'c-conf)
-                             (require 'protobuf-conf)
-                             (require 'go-conf)
+                             (require 'mac-conf)
                              (require 'org-conf)
-                             (require 'coffee-conf)))
+                             (require 'protobuf-conf)
+                             (require 'python-conf)))
 
 ;;; init.el ends here
