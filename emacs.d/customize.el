@@ -17,9 +17,9 @@
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
-   ["#ecf0f1" "#e74c3c" "#2ecc71" "#f1c40f" "#2492db" "#9b59b6" "#1abc9c" "#2c3e50"])
+   ["#f7f9fb" "#bf8b56" "#56bf8b" "#8bbf56" "#8b56bf" "#bf568b" "#8b56bf" "#405c79"])
  '(ansi-term-color-vector
-   [unspecified "#2C3E50" "#E74C3C" "#2ECC71" "#F1C40F" "#3498DB" "#9B59B6" "#3498DB" "#e0e0e0"] t)
+   [unspecified "#f7f9fb" "#bf8b56" "#56bf8b" "#8bbf56" "#8b56bf" "#bf568b" "#8b56bf" "#405c79"] t)
  '(aw-keys (quote (97 115 100 102 103 104 106 107 108)))
  '(backup-directory-alist (quote (("." . "~/.emacs.d/backups"))))
  '(coffee-tab-width 2)
