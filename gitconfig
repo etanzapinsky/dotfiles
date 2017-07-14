@@ -18,3 +18,6 @@
 [core]
     safecrlf = warn
     whitespace = space-before-tab,trailing-space
+[user]
+	name = Etan Zapinsky
+	email = etan.zapinsky@gmail.com

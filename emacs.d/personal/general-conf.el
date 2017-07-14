@@ -78,12 +78,11 @@
 (add-hook 'eshell-mode-hook 'with-editor-export-editor)
 
 ;; Smart mode line
-(setq sml/theme 'dark)
-(sml/setup)
+;; (sml/setup)
 
 ;; Are you sure you want to quit?
 (defun ask-before-closing ()
-  "Ask whether or not to close, and then close if y was pressed"
+  "Ask whether or not to close, and then close if y was pressed."
   (interactive)
   (if (y-or-n-p (format "Are you sure you want to exit Emacs? "))
       (if (< emacs-major-version 22)
@@ -109,7 +108,13 @@
 (global-set-key (kbd "C-c i") 'helm-imenu)
 
 ;; Enable projectile
-(projectile-global-mode)
+(projectile-mode)
+
+;; Enable spaceline
+(require 'spaceline-config)
+(spaceline-all-the-icons-theme)
+(spaceline-info-mode)
+(spaceline-helm-mode)
 
 ;; Composable marking commands
 ;; (require 'composable)
