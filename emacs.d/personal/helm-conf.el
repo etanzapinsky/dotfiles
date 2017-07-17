@@ -34,6 +34,9 @@
 (global-set-key (kbd "M-t") 'helm-projectile)
 (global-set-key (kbd "C-x r h") 'helm-resume)
 
+;; Imenu mode
+(global-set-key (kbd "C-c i") 'helm-imenu)
+
 (setq
  helm-google-suggest-use-curl-p t
  helm-scroll-amount 4 ; scroll 4 lines other window using M-<next>/M-<prior>

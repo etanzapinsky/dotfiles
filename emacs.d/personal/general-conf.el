@@ -104,9 +104,6 @@
 (when (fboundp 'winner-mode)
       (winner-mode 1))
 
-;; Imenu mode
-(global-set-key (kbd "C-c i") 'helm-imenu)
-
 ;; Enable projectile
 (projectile-mode)
 

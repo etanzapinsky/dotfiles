@@ -43,7 +43,6 @@
 (depends-on "frame-cmds")
 (depends-on "frame-fns")
 (depends-on "git-commit")
-(depends-on "git-gutter")
 (depends-on "gitattributes-mode")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
