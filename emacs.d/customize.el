@@ -21,6 +21,7 @@
  '(ansi-term-color-vector
    [unspecified "#f7f9fb" "#bf8b56" "#56bf8b" "#8bbf56" "#8b56bf" "#bf568b" "#8b56bf" "#405c79"] t)
  '(aw-keys (quote (97 115 100 102 103 104 106 107 108)))
+ '(aw-scope (quote frame))
  '(backup-directory-alist (quote (("." . "~/.emacs.d/backups"))))
  '(coffee-tab-width 2)
  '(column-number-mode t)
@@ -65,7 +66,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
- '(js-indent-level 2)
+ '(js-indent-level 8)
  '(kill-ring-max 1000)
  '(leuven-scale-outline-headlines t)
  '(mac-command-modifier (quote super))
@@ -105,7 +106,7 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/Dropbox (Personal)/Org/Todo.org" "~/Dropbox (Personal)/Org/Inbox.org")))
+    ("~/Dropbox/Org/Todo.org" "~/Dropbox/Org/Inbox.org" "~/Dropbox/Org/Cedar.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
@@ -125,12 +126,13 @@
       (file+headline "~/Dropbox (Personal)/Org/Todo.org" "Work")
       "* TODO %?
   %u" :prepend t :empty-lines-after 1))))
- '(org-default-notes-file "~/Dropbox (Personal)/Org/Notes.org")
+ '(org-clock-clocked-in-display (quote mode-line))
+ '(org-default-notes-file "~/Dropbox/Org/Notes.org")
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)
  '(package-selected-packages
    (quote
-    (gitattributes-mode gitconfig-mode gitignore-mode helm-ag leuven-theme info+ spaceline spaceline-all-the-icons spacemacs-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow all-the-icons elpy zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
+    (docker gitattributes-mode gitconfig-mode gitignore-mode helm-ag leuven-theme info+ spaceline spaceline-all-the-icons spacemacs-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow all-the-icons elpy zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(popwin-mode t)
@@ -191,10 +193,11 @@
  '(vc-display-status t)
  '(vc-make-backup-files t)
  '(version-control t)
- '(web-mode-code-indent-offset 2)
+ '(web-mode-attr-indent-offset nil)
+ '(web-mode-code-indent-offset 4)
  '(web-mode-css-indent-offset 2)
  '(web-mode-enable-engine-detection t)
- '(web-mode-markup-indent-offset 2)
+ '(web-mode-markup-indent-offset 4)
  '(when (not (facep (aref ansi-term-color-vector 0))))
  '(window-number-mode t))
 (custom-set-faces

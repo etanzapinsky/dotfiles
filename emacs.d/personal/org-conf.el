@@ -83,9 +83,10 @@ This can be 0 for immediate, or a floating point value.")
                                  (org-agenda-files :maxlevel . 1))))
 
 (custom-set-variables
- '(org-agenda-files (quote ("~/Dropbox (Personal)/Org/Todo.org"
-                            "~/Dropbox (Personal)/Org/Inbox.org")))
- '(org-default-notes-file "~/Dropbox (Personal)/Org/Notes.org")
+ '(org-agenda-files (quote ("~/Dropbox/Org/Todo.org"
+                            "~/Dropbox/Org/Inbox.org"
+                            "~/Dropbox/Org/Cedar.org")))
+ '(org-default-notes-file "~/Dropbox/Org/Notes.org")
  '(org-agenda-ndays 7)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)

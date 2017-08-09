@@ -37,6 +37,10 @@
 ;; Imenu mode
 (global-set-key (kbd "C-c i") 'helm-imenu)
 
+;; Kill buffer should use helm not ido
+;; so turn off ido mode everywhere!
+(ido-mode 0)
+
 (setq
  helm-google-suggest-use-curl-p t
  helm-scroll-amount 4 ; scroll 4 lines other window using M-<next>/M-<prior>

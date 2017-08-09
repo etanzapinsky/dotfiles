@@ -23,6 +23,7 @@
 (require 'textmate)
 (textmate-mode 1)
 (define-key *textmate-mode-map* (kbd "M-t") nil)
+(define-key *textmate-mode-map* (kbd "C-c C-t") nil)
 
 ;; Shortcut to comment line or region of code
 (global-set-key [?\C-\M-c] 'comment-or-uncomment-region-or-line)

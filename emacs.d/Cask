@@ -27,6 +27,7 @@
 (depends-on "dash")
 (depends-on "deferred")
 (depends-on "diminish")
+(depends-on "docker")
 (depends-on "drag-stuff")
 (depends-on "elpy")
 (depends-on "epc")
