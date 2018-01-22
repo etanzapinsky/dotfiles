@@ -52,6 +52,7 @@
      ("helv" "helvetica" "arial" "fixed"))))
  '(fci-rule-color "#d6d6d6")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
+ '(flycheck-python-mypy-args (quote ("--ignore-missing-imports")))
  '(font-lock-global-modes (quote (not speedbar-mode)))
  '(global-auto-revert-mode t)
  '(global-linum-mode t)

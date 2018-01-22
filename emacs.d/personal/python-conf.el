@@ -62,6 +62,9 @@
 ;; Add py-yapf to run on file save
 (add-hook 'python-mode-hook 'py-yapf-enable-on-save)
 
+;; Add mypy to python check list
+(flycheck-add-next-checker 'python-flake8 'python-mypy)
+
 (provide 'python-conf)
 
 ;;; python-conf.el ends here
