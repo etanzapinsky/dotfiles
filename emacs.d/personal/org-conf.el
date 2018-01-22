@@ -73,25 +73,14 @@ This can be 0 for immediate, or a floating point value.")
 
 (setq jiralib-url "https://jira.corp.squareup.com")
 
-(setq org-todo-keyword-faces
-      (quote (("TODO" :foreground "medium blue" :weight normal)
-              ("STARTED" :foreground "dark orange" :weight normal)
-              ("MERGED" :foreground "dark orange" :weight normal)
-              ("WAITING" :foreground "red" :weight normal))))
-
 (setq org-refile-targets (quote ((nil :maxlevel . 1)
                                  (org-agenda-files :maxlevel . 1))))
 
 (custom-set-variables
- '(org-agenda-files (quote ("~/Dropbox/Org/Todo.org"
-                            "~/Dropbox/Org/Inbox.org"
-                            "~/Dropbox/Org/Cedar.org")))
- '(org-default-notes-file "~/Dropbox/Org/Notes.org")
  '(org-agenda-ndays 7)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-scheduled-if-done t)
- '(org-agenda-start-on-weekday nil)
  '(org-reverse-note-order t)
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-agenda-custom-commands

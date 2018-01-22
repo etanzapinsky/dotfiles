@@ -95,8 +95,8 @@
   (global-set-key (kbd "C-x C-c") 'ask-before-closing))
 
 ;; Calendar mode
-(require 'calfw)
-(require 'calfw-org)
+;; (require 'calfw)
+;; (require 'calfw-org)
 
 ;; Perspective mode
 (persp-mode 1)

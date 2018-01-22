@@ -11,7 +11,6 @@
 
 ;; Enable elpy
 (elpy-enable)
-(elpy-use-ipython)
 
 ;; Use flycheck for elpy instead of flymake
 (when (require 'flycheck nil t)
@@ -59,6 +58,9 @@
 (global-set-key (kbd "C-c e") 'pyvenv-activate)
 (global-set-key (kbd "C-c d") 'pyvenv-deactivate)
 (global-set-key (kbd "C-c w") 'pyvenv-workon)
+
+;; Add py-yapf to run on file save
+(add-hook 'python-mode-hook 'py-yapf-enable-on-save)
 
 (provide 'python-conf)
 

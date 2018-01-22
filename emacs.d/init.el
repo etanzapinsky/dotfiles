@@ -46,6 +46,7 @@
                              (require 'mac-conf)
                              (require 'org-conf)
                              (require 'protobuf-conf)
-                             (require 'python-conf)))
+                             (require 'python-conf)
+                             (require 'typescript-conf)))
 
 ;;; init.el ends here

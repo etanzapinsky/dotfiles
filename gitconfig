@@ -12,6 +12,8 @@
     pl = pull
     rb = rebase
     recent = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | sed -e 's/\\(- [^ ]*\\)[^(]*/\\1 /g' | head -n 10"
+    noop = commit --amend --no-edit
+    push-noop = !git noop && git push -f
 [apply]
     whitespace = fix
 [color]

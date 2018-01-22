@@ -38,6 +38,10 @@
    (quote
     (elpy-module-company elpy-module-eldoc elpy-module-pyvenv elpy-module-yasnippet elpy-module-django elpy-module-sane-defaults)))
  '(elpy-rpc-python-command "python3")
+ '(elpy-test-django-runner-command (quote ("django-admin.py" "test" "--noinput")))
+ '(elpy-test-django-runner-manage-command (quote ("manage.py" "test" "--noinput")))
+ '(elpy-test-django-with-manage t)
+ '(elpy-test-runner (quote elpy-test-django-runner))
  '(exec-path-from-shell-arguments (quote ("-i" "-l")))
  '(exec-path-from-shell-check-startup-files nil)
  '(face-font-family-alternatives
@@ -66,7 +70,7 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice nil)
- '(js-indent-level 8)
+ '(js-indent-level 4)
  '(kill-ring-max 1000)
  '(leuven-scale-outline-headlines t)
  '(mac-command-modifier (quote super))
@@ -78,7 +82,9 @@
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(ns-function-modifier (quote hyper))
+ '(olivetti-body-width 100)
  '(olivetti-hide-mode-line t)
+ '(org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 3 :step day)))
  '(org-agenda-custom-commands
    (quote
     (("d" todo "DELEGATED" nil)
@@ -106,12 +112,13 @@
        (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-agenda-files
    (quote
-    ("~/Dropbox/Org/Todo.org" "~/Dropbox/Org/Inbox.org" "~/Dropbox/Org/Cedar.org")))
+    ("~/Dropbox/Org/Todo.org" "~/Dropbox/Org/Cedar.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-scheduled-if-done t)
- '(org-agenda-start-on-weekday nil)
+ '(org-agenda-start-on-weekday 0)
+ '(org-agenda-start-with-log-mode t)
  '(org-capture-templates
    (quote
     (("t" "Task" entry
@@ -130,9 +137,14 @@
  '(org-default-notes-file "~/Dropbox/Org/Notes.org")
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-reverse-note-order t)
+ '(org-todo-keyword-faces
+   (quote
+    (("TODO" :foreground "medium blue")
+     ("PROG" :foreground "goldenrod"))))
+ '(org-todo-keywords (quote ((sequence "TODO" "PROG" "DONE"))))
  '(package-selected-packages
    (quote
-    (docker gitattributes-mode gitconfig-mode gitignore-mode helm-ag leuven-theme info+ spaceline spaceline-all-the-icons spacemacs-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow all-the-icons elpy zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
+    (tide flycheck-mypy py-yapf py-autopep8 rjsx-mode docker gitattributes-mode gitconfig-mode gitignore-mode helm-ag leuven-theme info+ spaceline spaceline-all-the-icons spacemacs-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow all-the-icons elpy zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(popwin-mode t)
