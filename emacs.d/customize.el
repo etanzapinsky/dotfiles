@@ -52,7 +52,10 @@
      ("helv" "helvetica" "arial" "fixed"))))
  '(fci-rule-color "#d6d6d6")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
- '(flycheck-python-mypy-args (quote ("--ignore-missing-imports")))
+ '(flycheck-python-mypy-args
+   (quote
+    ("--ignore-missing-imports" "--disallow-untyped-defs")))
+ '(flycheck-python-mypy-ini nil)
  '(font-lock-global-modes (quote (not speedbar-mode)))
  '(global-auto-revert-mode t)
  '(global-linum-mode t)
@@ -145,7 +148,7 @@
  '(org-todo-keywords (quote ((sequence "TODO" "PROG" "DONE"))))
  '(package-selected-packages
    (quote
-    (tide flycheck-mypy py-yapf py-autopep8 rjsx-mode docker gitattributes-mode gitconfig-mode gitignore-mode helm-ag leuven-theme info+ spaceline spaceline-all-the-icons spacemacs-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow all-the-icons elpy zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
+    (prettier-js tide flycheck-mypy py-yapf py-autopep8 rjsx-mode docker gitattributes-mode gitconfig-mode gitignore-mode helm-ag leuven-theme info+ spaceline spaceline-all-the-icons spacemacs-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow all-the-icons elpy zoom-frm zenburn-theme yasnippet yaml-mode window-number window+ web-mode warm-night-theme use-package unicode-fonts textmate spacegray-theme soft-stone-theme soft-morning-theme smex smartparens slim-mode sass-mode rvm rspec-mode robe rainbow-mode protobuf-mode popwin perspective paradox pallet org-plus-contrib org-jira org-gcal org-bullets olivetti oldlace-theme nyan-mode neotree multiple-cursors miniedit markdown-mode magit load-theme-buffer-local linum-off json-mode jedi hideshowvis helm-swoop helm-projectile helm-ls-git helm-git-grep handlebars-mode greymatters-theme gotest go-stacktracer go-projectile go-autocomplete flycheck-cask flatui-theme fill-column-indicator face-remap+ expand-region exec-path-from-shell evil drag-stuff cus-edit+ company-inf-ruby company-go color-theme-solarized coffee-mode calfw base16-theme aggressive-indent ag ace-window)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(popwin-mode t)
@@ -174,6 +177,7 @@
      ("*Go Test*" :regexp nil))))
  '(powerline-default-separator (quote slant))
  '(powerline-text-scale-factor nil)
+ '(prettier-js-args (quote ("\"--trailing-comma\" \"all\"")))
  '(python-shell-interpreter "python3")
  '(rspec-use-rvm t)
  '(scalable-fonts-allowed t)
@@ -186,6 +190,7 @@
  '(sml/inactive-foreground-color "#34495e")
  '(spaceline-all-the-icons-clock-always-visible nil)
  '(tool-bar-mode nil)
+ '(typescript-indent-level 2)
  '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
@@ -207,10 +212,10 @@
  '(vc-make-backup-files t)
  '(version-control t)
  '(web-mode-attr-indent-offset nil)
- '(web-mode-code-indent-offset 4)
+ '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-enable-engine-detection t)
- '(web-mode-markup-indent-offset 4)
+ '(web-mode-markup-indent-offset 2)
  '(when (not (facep (aref ansi-term-color-vector 0))))
  '(window-number-mode t))
 (custom-set-faces

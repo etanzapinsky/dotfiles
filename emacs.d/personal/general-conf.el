@@ -70,6 +70,7 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 ;; Magit
+(require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
@@ -135,6 +136,10 @@
 ;; Markdown mode to use olivetti mode
 (add-hook 'markdown-mode-hook (lambda ()
                                 (olivetti-mode t)))
+
+;; Pretty window frame
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 (provide 'general-conf)
 

@@ -66,6 +66,15 @@
 (require 'flycheck-mypy)
 (flycheck-add-next-checker 'python-flake8 'python-mypy)
 
+;; Dont trash kill ring on save of python file
+;; See: https://www.reddit.com/r/emacs/comments/4vo9qh/losing_killring_on_save/
+(require 'nadvice)
+(defun my-save-kill-ring (fun &rest _args)
+  (let ((kill-ring nil))
+    (funcall fun)))
+(advice-add 'py-yapf-buffer :around 'my-save-kill-ring)
+
+
 (provide 'python-conf)
 
 ;;; python-conf.el ends here

@@ -40,6 +40,11 @@
 ;; enable typescript-tslint checker
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 
+;; prettier things
+(require 'prettier-js)
+(add-hook 'tide-mode-hook 'prettier-js-mode)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+
 (provide 'typescript-conf)
 
 ;;; typescript-conf.el ends here
