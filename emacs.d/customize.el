@@ -177,7 +177,9 @@
      ("*Go Test*" :regexp nil))))
  '(powerline-default-separator (quote slant))
  '(powerline-text-scale-factor nil)
- '(prettier-js-args (quote ("\"--trailing-comma\" \"all\"")))
+ '(prettier-js-args
+   (quote
+    ("\"--trailing-comma\" \"all\"" "\"--single-quote\"")))
  '(python-shell-interpreter "python3")
  '(rspec-use-rvm t)
  '(scalable-fonts-allowed t)
