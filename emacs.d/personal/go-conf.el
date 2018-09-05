@@ -20,26 +20,15 @@
 
 ;;; Code:
 
-;; Go vendor experiment
-(exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
-
 (exec-path-from-shell-copy-env "GOPATH")
 (defvar goimports-path (expand-file-name "bin/goimports" (getenv "GOPATH"))
   "Path to goimports executable.")
 (setq gofmt-command goimports-path)
 
-;; Go oracle
-(defvar gooracle-executable (expand-file-name "bin/oracle" (getenv "GOPATH"))
-  "Path to gooracle executable.")
-(setq go-oracle-command gooracle-executable)
-(defvar gooracle-file (expand-file-name "src/golang.org/x/tools/cmd/oracle/oracle.el" (getenv "GOPATH"))
-  "Path to gooracle elisp config.")
-(load gooracle-file)
-
 ;; Go rename
-(defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/go-rename.el" (getenv "GOPATH"))
-  "Path to gorename executable.")
-(load gorename-file)
+;; (defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/go-rename.el" (getenv "GOPATH"))
+;;   "Path to gorename executable.")
+;; (load gorename-file)
 
 ;; Add go company backend
 (eval-after-load 'company

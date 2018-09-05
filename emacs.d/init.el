@@ -40,7 +40,7 @@
                              (require 'c-conf)
                              (require 'company-conf)
                              (require 'general-conf)
-                             ;; (require 'go-conf)
+                             (require 'go-conf)
                              (require 'helm-conf)
                              (require 'iterm-conf)
                              (require 'mac-conf)
