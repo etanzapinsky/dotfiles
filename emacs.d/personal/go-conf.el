@@ -20,10 +20,7 @@
 
 ;;; Code:
 
-(exec-path-from-shell-copy-env "GOPATH")
-(defvar goimports-path (expand-file-name "bin/goimports" (getenv "GOPATH"))
-  "Path to goimports executable.")
-(setq gofmt-command goimports-path)
+(setq gofmt-command "goimports")
 
 ;; Go rename
 ;; (defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/go-rename.el" (getenv "GOPATH"))
