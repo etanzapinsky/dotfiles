@@ -60,7 +60,10 @@
   ; Customize compile command to run go build
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
-           "go install -v")))
+           "go install -v"))
+  ; Set -count=1 as idiomatic way to prevent go test caching
+  ; https://golang.org/doc/go1.10#test
+  (setq go-test-args "-count=1"))
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
 ;; Add gohtml files to web-mode
