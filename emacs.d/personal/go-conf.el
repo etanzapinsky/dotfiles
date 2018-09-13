@@ -22,6 +22,9 @@
 
 (setq gofmt-command "goimports")
 
+;; Get GOPATH into emacs
+(exec-path-from-shell-copy-env "GOPATH")
+
 ;; Go rename
 ;; (defvar gorename-file (expand-file-name "src/golang.org/x/tools/refactor/rename/go-rename.el" (getenv "GOPATH"))
 ;;   "Path to gorename executable.")
