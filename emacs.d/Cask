@@ -62,6 +62,7 @@
 (depends-on "go-projectile")
 (depends-on "go-rename")
 (depends-on "go-stacktracer")
+(depends-on "golint")
 (depends-on "gotest")
 (depends-on "goto-chg")
 (depends-on "greymatters-theme")
