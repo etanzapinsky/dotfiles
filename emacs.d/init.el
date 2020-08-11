@@ -39,6 +39,7 @@
 (add-hook 'after-init-hook (lambda ()
                              (require 'c-conf)
                              (require 'company-conf)
+                             (require 'elixir-conf)
                              (require 'general-conf)
                              (require 'go-conf)
                              (require 'helm-conf)
