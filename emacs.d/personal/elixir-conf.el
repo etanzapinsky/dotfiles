@@ -9,6 +9,19 @@
 
 ;;; Code:
 
+(use-package lsp-mode
+    :commands lsp
+    :ensure t
+    :diminish lsp-mode
+    :hook
+    (elixir-mode . lsp)
+    :init
+    (add-to-list 'exec-path (concat (file-name-directory (or load-file-name buffer-file-name)) "elixir-ls/")))
+
+(add-to-list 'exec-path (concat (file-name-directory (or load-file-name buffer-file-name)) "elixir-ls/"))
+
+
+
 ;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
 (add-hook 'elixir-mode-hook
           (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
